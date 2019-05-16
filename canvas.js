@@ -1,6 +1,9 @@
-window.addEventListener("load", () => {
     const canvas = document.querySelector("#canvas");
     const context = canvas.getContext("2d");
+
+window.addEventListener("load", () => {
+//    const canvas = document.querySelector("#canvas");
+//    const context = canvas.getContext("2d");
 
     //Resizing canvas
     canvas.height = window.innerHeight;
@@ -16,8 +19,7 @@ window.addEventListener("load", () => {
 
     function stopPos() {
         painting = false;
-        clearCanvas()
-        //context.beginPath();
+        context.beginPath();
     }
 
     function draw(e) {
@@ -31,11 +33,6 @@ window.addEventListener("load", () => {
         context.beginPath();
         context.moveTo(e.clientX, e.clientY); //makes drawing smoother
     }
-    
-    function clearCanvas() {
-        context.clearRect(0, 0, canvas.width, canvas.height);
-        context.beginPath();
-    }
 
     //event listeners
     canvas.addEventListener('mousedown', startPos);
@@ -44,3 +41,8 @@ window.addEventListener("load", () => {
     
     console.log(canvas);
 });
+
+function clearCanvas() {
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.beginPath();
+}
