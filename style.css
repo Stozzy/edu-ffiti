@@ -8,8 +8,27 @@
     border: 2px solid black;
 }
 
+#navbar {
+    text-align: center;
+}
+
 button {
     padding: 10px;
     margin: 10px;
-    
+    width: 75px;
+    height: 50px;
+    background: silver;
+    color: white;
+}
+
+#blackInk {
+    background: black;
+}
+
+#blueInk {
+    background: blue;
+}
+
+#redInk {
+    background: red;
 }
