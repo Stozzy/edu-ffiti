@@ -1,5 +1,6 @@
     const canvas = document.querySelector("#canvas");
     const context = canvas.getContext("2d");
+    let lineColor = '';
 
 window.addEventListener("load", () => {
 //    const canvas = document.querySelector("#canvas");
@@ -30,6 +31,7 @@ window.addEventListener("load", () => {
         context.lineTo(e.clientX, e.clientY);
 
         context.stroke();
+        context.strokeStyle = lineColor;
         context.beginPath();
         context.moveTo(e.clientX, e.clientY); //makes drawing smoother
     }
@@ -43,6 +45,26 @@ window.addEventListener("load", () => {
 });
 
 function clearCanvas() {
-    context.clearRect(0, 0, canvas.width, canvas.height);
-    context.beginPath();
+     //http://bencentra.com/code/2014/12/05/html5-canvas-touch-events.html
+    canvas.width = canvas.width;
+    lineColor = 'Black';
 }
+
+function changeStrokeColor(color) {
+    switch (color) {
+        case 'black':
+            lineColor = 'Black';
+            console.log(color);
+            break;
+        case 'blue':
+            lineColor = 'Blue';
+            console.log(color);
+            break;
+        case 'red':
+            lineColor = 'Red';
+            console.log(color);
+            break;
+    }
+}
+
+
