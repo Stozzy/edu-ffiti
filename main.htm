@@ -10,13 +10,14 @@
 </head>
 
 <body>
-    <button id="clrCanvasBtn" onclick="clearCanvas()">Clear</button>
-    <button id="blackInk" >Black Ink</button>
-    <button id="blueInk" >Blue Ink</button>
-    <button id="redInk" >Red Ink</button>
-    
-    <canvas id="canvas"></canvas>
-    <script src="canvas.js"></script>
-</body>
+    <div id="navbar">
+        <button id="clrCanvasBtn" onclick="clearCanvas()">Clear</button>
+        <button id="blackInk" onclick="changeStrokeColor('black')">Black</button>
+        <button id="blueInk" onclick="changeStrokeColor('blue')">Blue</button>
+        <button id="redInk" onclick="changeStrokeColor('red')">Red</button>
+    </div>
 
-</html>
+    <canvas id="canvas"></canvas>
+
+    <script src="canvas.js"></script>
+</body></html>
