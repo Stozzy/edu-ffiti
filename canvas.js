@@ -3,12 +3,10 @@
     let lineColor = '';
 
 window.addEventListener("load", () => {
-//    const canvas = document.querySelector("#canvas");
-//    const context = canvas.getContext("2d");
 
     //Resizing canvas
-    canvas.height = window.innerHeight;
-    canvas.width = window.innerWidth;
+    canvas.height = 800;
+    canvas.width = 1900;
 
     //variables
     let painting = false;
@@ -28,12 +26,11 @@ window.addEventListener("load", () => {
 
         context.lineWidth = 10;
         context.lineCap = 'round';
-        context.lineTo(e.clientX, e.clientY);
+        context.lineTo(e.clientX, (e.clientY-70));//-70 is the offset to adjust for navbar height
 
         context.stroke();
         context.strokeStyle = lineColor;
-        context.beginPath();
-        context.moveTo(e.clientX, e.clientY); //makes drawing smoother
+        context.moveTo(e.clientX, (e.clientY-70)); //makes drawing smoother
     }
 
     //event listeners
@@ -47,7 +44,6 @@ window.addEventListener("load", () => {
 function clearCanvas() {
      //http://bencentra.com/code/2014/12/05/html5-canvas-touch-events.html
     canvas.width = canvas.width;
-    lineColor = 'Black';
 }
 
 function changeStrokeColor(color) {
