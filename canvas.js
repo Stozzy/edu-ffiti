@@ -28,12 +28,12 @@ window.addEventListener("load", () => {
 
         context.lineWidth = 10;
         context.lineCap = 'round';
-        context.lineTo(e.clientX, e.clientY);
+        context.lineTo(e.clientX, (e.clientY - 70));
 
         context.stroke();
         context.strokeStyle = lineColor;
         context.beginPath();
-        context.moveTo(e.clientX, e.clientY); //makes drawing smoother
+        context.moveTo(e.clientX, (e.clientY - 70)); //makes drawing smoother
     }
 
     //event listeners
